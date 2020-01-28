@@ -1,0 +1,35 @@
+{
+  "$id": "https://pandoc.org/schema/default-metadata.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Document Metadata",
+  "type": "object",
+  "properties": {
+    "author": {
+      "oneOf": [
+        { "$ref": "#/definitions/single-author" },
+        { "$ref": "#/definitions/author-list" }
+      ]
+    },
+    "title": {
+      "type": "string",
+      "description": "The document's title."
+    },
+    "date": {
+      "type": "string",
+      "description": "The date on which the article was written or published. The date format can be chosen freely."
+    }
+  },
+  "definitions": {
+    "single-author": {
+      "type": "string",
+      "description": "The full name of the author."
+    },
+    "author-list": {
+      "type": "array",
+      "description": "List of all authors.",
+      "items": {
+        "$ref": "#/definitions/single-author"
+      }
+    }
+  }
+}
