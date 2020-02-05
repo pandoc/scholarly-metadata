@@ -1,0 +1,61 @@
+{
+  "$id": "https://pandoc.org/schema/article-authoring.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "JOSS Article Metadata",
+  "type": "object",
+  "properties": {
+    "authors": {
+      "type": "array",
+      "description": "List of all authors.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The full name of an author."
+          },
+          "affiliation": {
+            "oneOf": [
+              {"type": "string"},
+              {"type": "number"}
+            ],
+            "description": "An affiliation index, or a comma separated list of affiliation indices."
+          }
+        }
+      }
+    },
+    "affiliations": {
+      "type": "array",
+      "description": "List of institutions; each item listed here should relate to at least one author.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The full name of the affiliation; usually the name of an institute or company."
+          },
+          "index": {
+            "type": "number",
+            "description": "Integer specifying the relative number of this affiliation; see also authors.affiliation."
+          }
+        }
+      }
+    },
+    "title": {
+      "type": "string",
+      "description": "The document's title."
+    },
+    "tags": {
+      "type": "array",
+      "description": "List of relevant article tags/keywords.",
+      "items": {
+        "type": "string",
+        "description": "A single tag or key-word; may contain spaces."
+      }
+    },
+    "date": {
+      "type": "string",
+      "description": "The date on which the article was written or published. The date format can be chosen freely."
+    }
+  }
+}
