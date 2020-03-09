@@ -11,8 +11,23 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string",
+            "type": "array",
             "description": "The full name of an author."
+             "items": {
+        "type": "object",
+        "properties": {
+          "given name": {
+            "type": "string",
+            "description": "The given name of an author."
+          },
+          "surname": {
+            "type": "string",
+            "description": "The surname of an author."
+          },
+          "middle name": {
+            "type": "string",
+            "description": "The middle name(s) of an author."
+          }
           },
           "affiliation": {
             "oneOf": [
