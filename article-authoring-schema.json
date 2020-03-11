@@ -10,11 +10,30 @@
       "items": {
         "type": "object",
         "properties": {
-          "name": {
-            "type": "string",
-            "description": "The full name of an author."
-          },
-          "affiliation": {
+    "ORCID": {
+      "type": "string",
+      "format": "uri",
+      "description": "The Open Research Contributor Identifier (ORCID) is a persistent and unique digital ID for scientific and other academic authors and contributors.",
+      "pattern": "https:\\/\\/orcid\\.org\\/0000-000[0-9]{1}-[0-9]{4}-[0-9]{4}"
+    },
+    "familyName": {
+      "type": "string",
+      "description": "Last name of a person."
+    },
+    "givenName": {
+      "type": "string",
+      "description": "First name of a person."
+    },
+    "middleName": {
+      "type": "string",
+      "description": "Middle name of a person."
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address of a person or organization."
+    },
+     "affiliation": {
             "oneOf": [
               {"type": "string"},
               {"type": "number"}
